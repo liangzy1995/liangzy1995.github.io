@@ -8,15 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="记录一次线上搭建laravel环境笔记，本地环境一直使用的是Homestead，Valet。 服务器要求  PHP &amp;gt;= 7.1.3 OpenSSL PHP 拓展 PDO PHP 拓展 Mbstring PHP 拓展 Tokenizer PHP 拓展 XML PHP 拓展 Ctype PHP 拓展 JSON PHP 拓展 BCMath PHP 拓展   安装BCMathPHP7以上版本不在默">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线上环境搭建laravel">
-<meta property="og:url" content="https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/index.html">
+<meta property="og:title" content="我的笔记">
+<meta property="og:url" content="https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/index.html">
 <meta property="og:site_name" content="我的笔记">
 <meta property="og:description" content="记录一次线上搭建laravel环境笔记，本地环境一直使用的是Homestead，Valet。 服务器要求  PHP &amp;gt;= 7.1.3 OpenSSL PHP 拓展 PDO PHP 拓展 Mbstring PHP 拓展 Tokenizer PHP 拓展 XML PHP 拓展 Ctype PHP 拓展 JSON PHP 拓展 BCMath PHP 拓展   安装BCMathPHP7以上版本不在默">
 <meta property="og:locale" content="English">
 <meta property="og:image" content="http://pic-n-cc.oss-cn-shanghai.aliyuncs.com/2019/06/01/5cf23af879876.png">
-<meta property="og:updated_time" content="2019-06-02T05:31:55.311Z">
+<meta property="og:image" content="http://pic-n-cc.oss-cn-shanghai.aliyuncs.com/2019/06/02/5cf3c9828e3c4.png">
+<meta property="og:image" content="http://pic-n-cc.oss-cn-shanghai.aliyuncs.com/2019/06/02/5cf3cdb9e2128.png">
+<meta property="og:image" content="http://pic-n-cc.oss-cn-shanghai.aliyuncs.com/2019/06/02/5cf3cdb9e2128.png">
+<meta property="og:updated_time" content="2019-06-02T13:25:16.476Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线上环境搭建laravel">
+<meta name="twitter:title" content="我的笔记">
 <meta name="twitter:description" content="记录一次线上搭建laravel环境笔记，本地环境一直使用的是Homestead，Valet。 服务器要求  PHP &amp;gt;= 7.1.3 OpenSSL PHP 拓展 PDO PHP 拓展 Mbstring PHP 拓展 Tokenizer PHP 拓展 XML PHP 拓展 Ctype PHP 拓展 JSON PHP 拓展 BCMath PHP 拓展   安装BCMathPHP7以上版本不在默">
 <meta name="twitter:image" content="http://pic-n-cc.oss-cn-shanghai.aliyuncs.com/2019/06/01/5cf23af879876.png">
     
@@ -38,7 +41,7 @@
         
     
     <!-- title -->
-    <title>线上环境搭建laravel</title>
+    <title>我的笔记</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- persian styles -->
@@ -74,8 +77,10 @@
     <span id="actions">
       <ul>
         
+        <li><a class="icon" href="/2019/03/12/Redis-基础详解/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
-        <li><a class="icon" href="/2019/05/22/MySQL-基础知识/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="/2019/02/22/MySQL-优化技巧/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -88,16 +93,16 @@
     <br>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/&text=线上环境搭建laravel"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/&title=线上环境搭建laravel"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/&is_video=false&description=线上环境搭建laravel"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=线上环境搭建laravel&body=Check out this article: https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/&title=线上环境搭建laravel"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/&title=线上环境搭建laravel"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/&title=线上环境搭建laravel"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/&title=线上环境搭建laravel"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/&name=线上环境搭建laravel&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/&text="><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/&title="><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/&is_video=false&description="><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=&body=Check out this article: https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/&title="><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/&title="><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/&title="><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/&title="><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/&name=&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -114,7 +119,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        线上环境搭建laravel
+        
     </h1>
 
 
@@ -126,7 +131,7 @@
       
     <div class="postdate">
       
-        <time datetime="2019-06-01T06:14:28.000Z" itemprop="datePublished">2019-06-01</time>
+        <time datetime="2019-02-22T06:14:28.000Z" itemprop="datePublished">2019-02-22</time>
         
       
     </div>
@@ -166,16 +171,23 @@
 <li><p>安装框架依赖包</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer update</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>出现错误：</p>
+<li><p>出现一个错误：</p>
 <p><img src="http://pic-n-cc.oss-cn-shanghai.aliyuncs.com/2019/06/01/5cf23af879876.png" alt></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">解决办法：</span><br><span class="line">sudo yum install  install php72w-xml</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>500 😅</p>
+<p><img src="http://pic-n-cc.oss-cn-shanghai.aliyuncs.com/2019/06/02/5cf3c9828e3c4.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">解决办法：</span><br><span class="line">mv .env.example .env</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
-<p>11111</p>
-<p>34232</p>
-<p>陶璐</p>
+<ul>
+<li><p>成功😄</p>
+<p><img src="http://pic-n-cc.oss-cn-shanghai.aliyuncs.com/2019/06/02/5cf3cdb9e2128.png" alt="屏幕快照 2019-06-02 下午9.22.20.png"></p>
+<p><img src="http://pic-n-cc.oss-cn-shanghai.aliyuncs.com/2019/06/02/5cf3cdb9e2128.png" alt="屏幕快照 2019-06-02 下午9.22.20.png"></p>
+</li>
+</ul>
 
   </div>
 </article>
@@ -206,16 +218,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/&text=线上环境搭建laravel"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/&title=线上环境搭建laravel"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/&is_video=false&description=线上环境搭建laravel"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=线上环境搭建laravel&body=Check out this article: https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/&title=线上环境搭建laravel"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/&title=线上环境搭建laravel"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/&title=线上环境搭建laravel"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/&title=线上环境搭建laravel"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://www.n-cc.cc/2019/06/01/线上环境搭建laravel/&name=线上环境搭建laravel&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/&text="><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/&title="><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/&is_video=false&description="><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=&body=Check out this article: https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/&title="><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/&title="><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/&title="><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/&title="><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://www.n-cc.cc/2019/02/22/线上环境搭建laravel/&name=&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
