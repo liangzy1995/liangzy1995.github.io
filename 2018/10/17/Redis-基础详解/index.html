@@ -9,11 +9,11 @@
     <meta name="description" content="简介  Redis 是一个开源的 key-value 存储系统。 与 Memcached 类似，Redis 将大部分数据存储在内存中   redis - 系统文件说明 当 mkae 命令执行完成后，会在当前目录生成多个可执行文件，分别是  redis-server:redis 服务器的 daemon 启动程序 redis-cli:redis 命令行操作工具。当然，你也可以用 telnet 根据其纯">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis 基础详解">
-<meta property="og:url" content="https://www.n-cc.cc/2019/03/12/Redis-基础详解/index.html">
+<meta property="og:url" content="https://www.n-cc.cc/2018/10/17/Redis-基础详解/index.html">
 <meta property="og:site_name" content="我的笔记">
 <meta property="og:description" content="简介  Redis 是一个开源的 key-value 存储系统。 与 Memcached 类似，Redis 将大部分数据存储在内存中   redis - 系统文件说明 当 mkae 命令执行完成后，会在当前目录生成多个可执行文件，分别是  redis-server:redis 服务器的 daemon 启动程序 redis-cli:redis 命令行操作工具。当然，你也可以用 telnet 根据其纯">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2019-05-22T08:36:45.494Z">
+<meta property="og:updated_time" content="2019-06-03T08:00:06.616Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis 基础详解">
 <meta name="twitter:description" content="简介  Redis 是一个开源的 key-value 存储系统。 与 Memcached 类似，Redis 将大部分数据存储在内存中   redis - 系统文件说明 当 mkae 命令执行完成后，会在当前目录生成多个可执行文件，分别是  redis-server:redis 服务器的 daemon 启动程序 redis-cli:redis 命令行操作工具。当然，你也可以用 telnet 根据其纯">
@@ -72,10 +72,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2019/05/22/PHP-详细面试总结/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2019/02/04/MySQL-优化技巧/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2019/02/27/线上环境搭建laravel/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/10/13/MySQL-规范/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -88,16 +88,16 @@
     <br>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://www.n-cc.cc/2019/03/12/Redis-基础详解/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://www.n-cc.cc/2019/03/12/Redis-基础详解/&text=Redis 基础详解"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://www.n-cc.cc/2019/03/12/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.n-cc.cc/2019/03/12/Redis-基础详解/&is_video=false&description=Redis 基础详解"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Redis 基础详解&body=Check out this article: https://www.n-cc.cc/2019/03/12/Redis-基础详解/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://www.n-cc.cc/2019/03/12/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://www.n-cc.cc/2019/03/12/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://www.n-cc.cc/2019/03/12/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://www.n-cc.cc/2019/03/12/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://www.n-cc.cc/2019/03/12/Redis-基础详解/&name=Redis 基础详解&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://www.n-cc.cc/2018/10/17/Redis-基础详解/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://www.n-cc.cc/2018/10/17/Redis-基础详解/&text=Redis 基础详解"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://www.n-cc.cc/2018/10/17/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.n-cc.cc/2018/10/17/Redis-基础详解/&is_video=false&description=Redis 基础详解"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Redis 基础详解&body=Check out this article: https://www.n-cc.cc/2018/10/17/Redis-基础详解/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://www.n-cc.cc/2018/10/17/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://www.n-cc.cc/2018/10/17/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://www.n-cc.cc/2018/10/17/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://www.n-cc.cc/2018/10/17/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://www.n-cc.cc/2018/10/17/Redis-基础详解/&name=Redis 基础详解&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -126,7 +126,7 @@
       
     <div class="postdate">
       
-        <time datetime="2019-03-12T09:15:50.000Z" itemprop="datePublished">2019-03-12</time>
+        <time datetime="2018-10-17T02:15:50.000Z" itemprop="datePublished">2018-10-17</time>
         
       
     </div>
@@ -381,16 +381,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://www.n-cc.cc/2019/03/12/Redis-基础详解/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://www.n-cc.cc/2019/03/12/Redis-基础详解/&text=Redis 基础详解"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://www.n-cc.cc/2019/03/12/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.n-cc.cc/2019/03/12/Redis-基础详解/&is_video=false&description=Redis 基础详解"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Redis 基础详解&body=Check out this article: https://www.n-cc.cc/2019/03/12/Redis-基础详解/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://www.n-cc.cc/2019/03/12/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://www.n-cc.cc/2019/03/12/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://www.n-cc.cc/2019/03/12/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://www.n-cc.cc/2019/03/12/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://www.n-cc.cc/2019/03/12/Redis-基础详解/&name=Redis 基础详解&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://www.n-cc.cc/2018/10/17/Redis-基础详解/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://www.n-cc.cc/2018/10/17/Redis-基础详解/&text=Redis 基础详解"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://www.n-cc.cc/2018/10/17/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.n-cc.cc/2018/10/17/Redis-基础详解/&is_video=false&description=Redis 基础详解"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Redis 基础详解&body=Check out this article: https://www.n-cc.cc/2018/10/17/Redis-基础详解/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://www.n-cc.cc/2018/10/17/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://www.n-cc.cc/2018/10/17/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://www.n-cc.cc/2018/10/17/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://www.n-cc.cc/2018/10/17/Redis-基础详解/&title=Redis 基础详解"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://www.n-cc.cc/2018/10/17/Redis-基础详解/&name=Redis 基础详解&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
