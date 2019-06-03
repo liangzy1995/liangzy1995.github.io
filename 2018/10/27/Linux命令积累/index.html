@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang=En>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="信息显示 uname uanme -a 显示系统全部信息  hostname hostname 显示主机名  dmesg dmesg 显示开机信息  uptime uptime 显示系统运行时间及负载  stat stat 显示文件的状态信息  du du -sh 显示路径下所有文件大小 du -sh local 显示路径下 local 目录文件大小 du -sh * 显示路径下所有目录文件大小">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux命令积累">
+<meta property="og:url" content="https://www.n-cc.cc/2018/10/27/Linux命令积累/index.html">
+<meta property="og:site_name" content="我的笔记">
+<meta property="og:description" content="信息显示 uname uanme -a 显示系统全部信息  hostname hostname 显示主机名  dmesg dmesg 显示开机信息  uptime uptime 显示系统运行时间及负载  stat stat 显示文件的状态信息  du du -sh 显示路径下所有文件大小 du -sh local 显示路径下 local 目录文件大小 du -sh * 显示路径下所有目录文件大小">
+<meta property="og:locale" content="English">
+<meta property="og:updated_time" content="2019-06-03T15:47:04.546Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux命令积累">
+<meta name="twitter:description" content="信息显示 uname uanme -a 显示系统全部信息  hostname hostname 显示主机名  dmesg dmesg 显示开机信息  uptime uptime 显示系统运行时间及负载  stat stat 显示文件的状态信息  du du -sh 显示路径下所有文件大小 du -sh local 显示路径下 local 目录文件大小 du -sh * 显示路径下所有目录文件大小">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Linux命令积累</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://47.98.162.67:8082">Gogs</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/02/04/MySQL-优化技巧/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/10/17/Redis-基础详解/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://www.n-cc.cc/2018/10/27/Linux命令积累/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://www.n-cc.cc/2018/10/27/Linux命令积累/&text=Linux命令积累"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://www.n-cc.cc/2018/10/27/Linux命令积累/&title=Linux命令积累"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.n-cc.cc/2018/10/27/Linux命令积累/&is_video=false&description=Linux命令积累"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Linux命令积累&body=Check out this article: https://www.n-cc.cc/2018/10/27/Linux命令积累/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://www.n-cc.cc/2018/10/27/Linux命令积累/&title=Linux命令积累"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://www.n-cc.cc/2018/10/27/Linux命令积累/&title=Linux命令积累"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://www.n-cc.cc/2018/10/27/Linux命令积累/&title=Linux命令积累"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://www.n-cc.cc/2018/10/27/Linux命令积累/&title=Linux命令积累"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://www.n-cc.cc/2018/10/27/Linux命令积累/&name=Linux命令积累&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#信息显示"><span class="toc-number">1.</span> <span class="toc-text">信息显示</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#uname"><span class="toc-number">1.1.</span> <span class="toc-text">uname</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hostname"><span class="toc-number">1.2.</span> <span class="toc-text">hostname</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dmesg"><span class="toc-number">1.3.</span> <span class="toc-text">dmesg</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#uptime"><span class="toc-number">1.4.</span> <span class="toc-text">uptime</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#stat"><span class="toc-number">1.5.</span> <span class="toc-text">stat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#du"><span class="toc-number">1.6.</span> <span class="toc-text">du</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#df"><span class="toc-number">1.7.</span> <span class="toc-text">df</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#top"><span class="toc-number">1.8.</span> <span class="toc-text">top</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#free"><span class="toc-number">1.9.</span> <span class="toc-text">free</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#date"><span class="toc-number">1.10.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cal"><span class="toc-number">1.11.</span> <span class="toc-text">cal</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搜索文件"><span class="toc-number">2.</span> <span class="toc-text">搜索文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#which"><span class="toc-number">2.1.</span> <span class="toc-text">which</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#find"><span class="toc-number">2.2.</span> <span class="toc-text">find</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#whereis"><span class="toc-number">2.3.</span> <span class="toc-text">whereis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#locate"><span class="toc-number">2.4.</span> <span class="toc-text">locate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jobs"><span class="toc-number">2.5.</span> <span class="toc-text">jobs</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程管理"><span class="toc-number">3.</span> <span class="toc-text">进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#bg"><span class="toc-number">3.1.</span> <span class="toc-text">bg</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fg"><span class="toc-number">3.2.</span> <span class="toc-text">fg</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kill"><span class="toc-number">3.3.</span> <span class="toc-text">kill</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#killall"><span class="toc-number">3.4.</span> <span class="toc-text">killall</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pkill"><span class="toc-number">3.5.</span> <span class="toc-text">pkill</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#crontab"><span class="toc-number">3.6.</span> <span class="toc-text">crontab</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ps"><span class="toc-number">3.7.</span> <span class="toc-text">ps</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pstree"><span class="toc-number">3.8.</span> <span class="toc-text">pstree</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nohup"><span class="toc-number">3.9.</span> <span class="toc-text">nohup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pgrep"><span class="toc-number">3.10.</span> <span class="toc-text">pgrep</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络操作"><span class="toc-number">4.</span> <span class="toc-text">网络操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#telnet"><span class="toc-number">4.1.</span> <span class="toc-text">telnet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ssh"><span class="toc-number">4.2.</span> <span class="toc-text">ssh</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#scp"><span class="toc-number">4.3.</span> <span class="toc-text">scp</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wget"><span class="toc-number">4.4.</span> <span class="toc-text">wget</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ping"><span class="toc-number">4.5.</span> <span class="toc-text">ping</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#route"><span class="toc-number">4.6.</span> <span class="toc-text">route</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ifconfig"><span class="toc-number">4.7.</span> <span class="toc-text">ifconfig</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ifup"><span class="toc-number">4.8.</span> <span class="toc-text">ifup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ifdown"><span class="toc-number">4.9.</span> <span class="toc-text">ifdown</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#netstat"><span class="toc-number">4.10.</span> <span class="toc-text">netstat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ss"><span class="toc-number">4.11.</span> <span class="toc-text">ss</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#磁盘-amp-文件系统"><span class="toc-number">5.</span> <span class="toc-text">磁盘 &amp; 文件系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mount"><span class="toc-number">5.1.</span> <span class="toc-text">mount</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#umount"><span class="toc-number">5.2.</span> <span class="toc-text">umount</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fsck"><span class="toc-number">5.3.</span> <span class="toc-text">fsck</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dumpe2fs"><span class="toc-number">5.4.</span> <span class="toc-text">dumpe2fs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dump"><span class="toc-number">5.5.</span> <span class="toc-text">dump</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fdisk"><span class="toc-number">5.6.</span> <span class="toc-text">fdisk</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mkfs"><span class="toc-number">5.7.</span> <span class="toc-text">mkfs</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统权限"><span class="toc-number">6.</span> <span class="toc-text">系统权限</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#chmod"><span class="toc-number">6.1.</span> <span class="toc-text">chmod</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#chown"><span class="toc-number">6.2.</span> <span class="toc-text">chown</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#chgrp"><span class="toc-number">6.3.</span> <span class="toc-text">chgrp</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关机重启"><span class="toc-number">7.</span> <span class="toc-text">关机重启</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#shutdown"><span class="toc-number">7.1.</span> <span class="toc-text">shutdown</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#halt"><span class="toc-number">7.2.</span> <span class="toc-text">halt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#poweroff"><span class="toc-number">7.3.</span> <span class="toc-text">poweroff</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#logout"><span class="toc-number">7.4.</span> <span class="toc-text">logout</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#exit"><span class="toc-number">7.5.</span> <span class="toc-text">exit</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">8.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#echo"><span class="toc-number">8.1.</span> <span class="toc-text">echo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#print"><span class="toc-number">8.2.</span> <span class="toc-text">print</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rpm"><span class="toc-number">8.3.</span> <span class="toc-text">rpm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#yum"><span class="toc-number">8.4.</span> <span class="toc-text">yum</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#clear"><span class="toc-number">8.5.</span> <span class="toc-text">clear</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#history"><span class="toc-number">8.6.</span> <span class="toc-text">history</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Linux命令积累
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">我的笔记</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-10-27T09:55:41.000Z" itemprop="datePublished">2018-10-27</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="信息显示"><a href="#信息显示" class="headerlink" title="信息显示"></a>信息显示</h3><hr>
+<h4 id="uname"><a href="#uname" class="headerlink" title="uname"></a>uname</h4><ul>
+<li>uanme -a 显示系统全部信息</li>
+</ul>
+<h4 id="hostname"><a href="#hostname" class="headerlink" title="hostname"></a>hostname</h4><ul>
+<li>hostname 显示主机名</li>
+</ul>
+<h4 id="dmesg"><a href="#dmesg" class="headerlink" title="dmesg"></a>dmesg</h4><ul>
+<li>dmesg 显示开机信息</li>
+</ul>
+<h4 id="uptime"><a href="#uptime" class="headerlink" title="uptime"></a>uptime</h4><ul>
+<li>uptime 显示系统运行时间及负载</li>
+</ul>
+<h4 id="stat"><a href="#stat" class="headerlink" title="stat"></a>stat</h4><ul>
+<li>stat 显示文件的状态信息</li>
+</ul>
+<h4 id="du"><a href="#du" class="headerlink" title="du"></a>du</h4><ul>
+<li>du -sh 显示路径下所有文件大小</li>
+<li>du -sh local 显示路径下 local 目录文件大小</li>
+<li>du -sh * 显示路径下所有目录文件大小</li>
+</ul>
+<h4 id="df"><a href="#df" class="headerlink" title="df"></a>df</h4><ul>
+<li>df -h 显示系统磁盘空间的使用情况</li>
+</ul>
+<h4 id="top"><a href="#top" class="headerlink" title="top"></a>top</h4><ul>
+<li>top 实时显示系统资源使用情况</li>
+</ul>
+<h4 id="free"><a href="#free" class="headerlink" title="free"></a>free</h4><ul>
+<li>free -m 以 M 为单位查看系统内存</li>
+</ul>
+<h4 id="date"><a href="#date" class="headerlink" title="date"></a>date</h4><ul>
+<li>date +”%Y-%m-%d” 2019-05-28</li>
+<li>date -d “1 day ago” +”% Y-% m-% d” 输出昨天日期</li>
+<li>date -d “+1 day” +% Y% m% d 显示前一天的日期</li>
+<li>date -d “-1 day” +% Y% m% d 显示后一天的日期</li>
+<li>date -d “-1 month” +% Y% m% d 显示上一月的日期</li>
+<li>date -d “+1 month” +% Y% m% d 显示下一月的日期</li>
+<li>date -d “-1 year” +% Y% m% d 显示前一年的日期</li>
+<li>date -d “+1 year” +% Y% m% d 显示下一年的日期</li>
+</ul>
+<h4 id="cal"><a href="#cal" class="headerlink" title="cal"></a>cal</h4><ul>
+<li>cal 日历信息</li>
+</ul>
+<hr>
+<h3 id="搜索文件"><a href="#搜索文件" class="headerlink" title="搜索文件"></a>搜索文件</h3><h4 id="which"><a href="#which" class="headerlink" title="which"></a>which</h4><ul>
+<li>which pwd 显示命令路径</li>
+</ul>
+<h4 id="find"><a href="#find" class="headerlink" title="find"></a>find</h4><ul>
+<li>find /-name ‘target’ 查询根目录下面文件名为 target 的文件</li>
+</ul>
+<h4 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a>whereis</h4><ul>
+<li>whereis php 查找二进制命令</li>
+</ul>
+<h4 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h4><ul>
+<li><p>yum -y install mlocate</p>
+</li>
+<li><p>locate target 从数据库 (/var/lib/mlocate/mlocate.db) 查找目标文件，使用 updatedb 更新库</p>
+</li>
+</ul>
+<h4 id="jobs"><a href="#jobs" class="headerlink" title="jobs"></a>jobs</h4><ul>
+<li>jobs 查看当前有多少在后台运行的命令</li>
+</ul>
+<h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><hr>
+<h4 id="bg"><a href="#bg" class="headerlink" title="bg"></a>bg</h4><ul>
+<li>bg 1 将一个在后台暂停的命令，继续执行，1 为作业号<br>（ctrl+z）可以挂起程序，返回作业号</li>
+</ul>
+<h4 id="fg"><a href="#fg" class="headerlink" title="fg"></a>fg</h4><ul>
+<li>fg 1 将后台中的命令调至前台继续运行 ，1 为作业号</li>
+</ul>
+<h4 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h4><ul>
+<li>kill 进程号 杀进程</li>
+<li>kill -9 进程号 强杀进程</li>
+</ul>
+<h4 id="killall"><a href="#killall" class="headerlink" title="killall"></a>killall</h4><ul>
+<li>killall php 通过进程名字杀进程</li>
+<li>killall -9 php 通过进程名字强杀进程</li>
+</ul>
+<h4 id="pkill"><a href="#pkill" class="headerlink" title="pkill"></a>pkill</h4><ul>
+<li>用法同上</li>
+</ul>
+<h4 id="crontab"><a href="#crontab" class="headerlink" title="crontab"></a>crontab</h4><ul>
+<li>crontab -l 查看定时任务</li>
+<li>crontab -e 编辑定时任务</li>
+<li>crontab -l -u user1 查看 user1 定时任务，只有 root 才有权限</li>
+<li>crontab -e -u user1 编辑 user1 定时任务，只有 root 才有权限</li>
+</ul>
+<h4 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h4><ul>
+<li>ps -ef 查看进程，显示 UID,PPIP,C 与 STIME，每个程序所使用的环境变量栏位</li>
+<li>ps -axu 查看所有进程，并显示属于用户</li>
+</ul>
+<h4 id="pstree"><a href="#pstree" class="headerlink" title="pstree"></a>pstree</h4><ul>
+<li>pstree -p 显示当前所有进程的进程号和进程 id 树</li>
+<li>pstree -a 显示所有进程的所有详细信息树</li>
+</ul>
+<h4 id="nohup"><a href="#nohup" class="headerlink" title="nohup"></a>nohup</h4><ul>
+<li>nohup command &amp; 退出账户时不挂断程序，仍在后台运行</li>
+</ul>
+<h4 id="pgrep"><a href="#pgrep" class="headerlink" title="pgrep"></a>pgrep</h4><ul>
+<li>pgrep -l httpd 查找 http 相关的进程号</li>
+</ul>
+<h3 id="网络操作"><a href="#网络操作" class="headerlink" title="网络操作"></a>网络操作</h3><hr>
+<h4 id="telnet"><a href="#telnet" class="headerlink" title="telnet"></a>telnet</h4><ul>
+<li>telnet 127.0.0.1 登录远程主机</li>
+</ul>
+<h4 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h4><ul>
+<li>ssh <a href="mailto:root@127.0.0.1" target="_blank" rel="noopener">root@127.0.0.1</a> -p22 登录远程主机</li>
+</ul>
+<h4 id="scp"><a href="#scp" class="headerlink" title="scp"></a>scp</h4><ul>
+<li>scp local_file remote_username@remote_ip:remote_folder 本地拷贝到远程</li>
+<li>scp remote_username@remote_ip:remote_folder local_file 远程拷贝到本地</li>
+</ul>
+<h4 id="wget"><a href="#wget" class="headerlink" title="wget"></a>wget</h4><ul>
+<li>wget url 下载一个文件</li>
+<li>wget –limit-rate=300k url 限速下载</li>
+<li>wget -c url 断点续传</li>
+<li>wget -b url 后台下载</li>
+</ul>
+<h4 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h4><ul>
+<li>ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> -c 2 收到两个包就结束</li>
+</ul>
+<h4 id="route"><a href="#route" class="headerlink" title="route"></a>route</h4><ul>
+<li>route 显示当前路由</li>
+</ul>
+<h4 id="ifconfig"><a href="#ifconfig" class="headerlink" title="ifconfig"></a>ifconfig</h4><ul>
+<li>ifconfig 查看、配置、启用或禁用网络接口</li>
+</ul>
+<h4 id="ifup"><a href="#ifup" class="headerlink" title="ifup"></a>ifup</h4><ul>
+<li>ifup eth0 开启 eth0 网卡</li>
+</ul>
+<h4 id="ifdown"><a href="#ifdown" class="headerlink" title="ifdown"></a>ifdown</h4><ul>
+<li>ifdown eth0 关闭 eth0 网卡</li>
+</ul>
+<h4 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a>netstat</h4><ul>
+<li>netstat -at 列出所有 tcp 端口</li>
+<li>netstat -au 列出所有 udp 端口</li>
+<li>netstat -l 只显示监听端口</li>
+</ul>
+<h4 id="ss"><a href="#ss" class="headerlink" title="ss"></a>ss</h4><ul>
+<li>ss -t -a 显示所有 tcp 链接</li>
+<li>ss -l 显示处于监听状态的套接字</li>
+</ul>
+<h3 id="磁盘-amp-文件系统"><a href="#磁盘-amp-文件系统" class="headerlink" title="磁盘 &amp; 文件系统"></a>磁盘 &amp; 文件系统</h3><hr>
+<h4 id="mount"><a href="#mount" class="headerlink" title="mount"></a>mount</h4><ul>
+<li>mount /dev/hda1 /mnt 将 /dev/hda1 挂载到 /mnt 目录下</li>
+</ul>
+<h4 id="umount"><a href="#umount" class="headerlink" title="umount"></a>umount</h4><ul>
+<li>umount -v /mnt/mymount/ 卸载 /mnt/mymount/</li>
+</ul>
+<h4 id="fsck"><a href="#fsck" class="headerlink" title="fsck"></a>fsck</h4><ul>
+<li>fsck -y /dev/hda2 检查并修复 Linux 文件系统</li>
+</ul>
+<h4 id="dumpe2fs"><a href="#dumpe2fs" class="headerlink" title="dumpe2fs"></a>dumpe2fs</h4><ul>
+<li>dumpe2fs /dev/hda1 查看文件系统信息</li>
+</ul>
+<h4 id="dump"><a href="#dump" class="headerlink" title="dump"></a>dump</h4><ul>
+<li>‍dump -0u -f /tmp/homeback.bak /home<br>将 /home 目录所有内容备份到 /tmp/homeback.bak 文件中，备份层级为 0 并在 /etc/dumpdates 中记录相关信息</li>
+</ul>
+<h4 id="fdisk"><a href="#fdisk" class="headerlink" title="fdisk"></a>fdisk</h4><ul>
+<li>fdisk /dev/sdb<br>输入 m 列出可以执行的命令<br>输入 p 列出磁盘目前的分区情况<br>输入 d 然后选择分区，删除现有分区<br>输入 print 查看分区情况，确认分区已经删除<br>输入 n 建立新的磁盘分区<br>输入 w 最后对分区操作进行保存</li>
+</ul>
+<h4 id="mkfs"><a href="#mkfs" class="headerlink" title="mkfs"></a>mkfs</h4><ul>
+<li>mkfs -t ext3 /dev/sda6 将 sda6 分区格式化为 ext3 格式</li>
+</ul>
+<h3 id="系统权限"><a href="#系统权限" class="headerlink" title="系统权限"></a>系统权限</h3><hr>
+<h4 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h4><ul>
+<li>chmod 777 file1 修改 file1 文件权限为 777</li>
+<li>chmod u+x,g+w file1 为 file1 设置自己可以执行，组员可以写入的权限</li>
+</ul>
+<h4 id="chown"><a href="#chown" class="headerlink" title="chown"></a>chown</h4><ul>
+<li>chown -R root /usr/meng 修改将目录 /usr/meng 及其下面的所有文件、子目录的文件主改成 root</li>
+</ul>
+<h4 id="chgrp"><a href="#chgrp" class="headerlink" title="chgrp"></a>chgrp</h4><ul>
+<li>chgrp -R mengxin /usr/meng 将 /usr/meng 及其子目录下的所有文件的用户组改为 mengxin</li>
+</ul>
+<h3 id="关机重启"><a href="#关机重启" class="headerlink" title="关机重启"></a>关机重启</h3><hr>
+<h4 id="shutdown"><a href="#shutdown" class="headerlink" title="shutdown"></a>shutdown</h4><ul>
+<li>shutdown -h now 立即关机</li>
+<li>shutdown +5 “System will shutdown after 5 minutes” 指定 5 分钟后关机，同时送出警告信息给登入用户</li>
+</ul>
+<h4 id="halt"><a href="#halt" class="headerlink" title="halt"></a>halt</h4><ul>
+<li>halt -p 关闭系统后关闭电源</li>
+<li>halt -d 关闭系统，但不留下纪录</li>
+</ul>
+<h4 id="poweroff"><a href="#poweroff" class="headerlink" title="poweroff"></a>poweroff</h4><ul>
+<li>poweroff -f 强制关闭操作系统</li>
+</ul>
+<h4 id="logout"><a href="#logout" class="headerlink" title="logout"></a>logout</h4><ul>
+<li>logout 退出当前登录的 Shell</li>
+</ul>
+<h4 id="exit"><a href="#exit" class="headerlink" title="exit"></a>exit</h4><ul>
+<li>exit 退出当前登录的 Shell</li>
+</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><hr>
+<h4 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h4><ul>
+<li>echo ‘hello’ 打印字符串、变量</li>
+</ul>
+<h4 id="print"><a href="#print" class="headerlink" title="print"></a>print</h4><ul>
+<li>printf ‘hell0’ 格式化输出字符串</li>
+</ul>
+<h4 id="rpm"><a href="#rpm" class="headerlink" title="rpm"></a>rpm</h4><ul>
+<li>rpm -ivh your-package.rpm 安装 rpm 包</li>
+<li>rpm -Uvh your-package.rpm 升级 rpm 包</li>
+<li>rpm -e package 卸载</li>
+<li>rpm -qa 列出所有安装过的包</li>
+<li>rpm -ql 包名 rpm 包中的文件安装到那里去</li>
+</ul>
+<h4 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h4><ul>
+<li>yum install php 安装 php</li>
+<li>yum remove php 卸载 php</li>
+</ul>
+<h4 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h4><ul>
+<li>clear 清屏</li>
+</ul>
+<h4 id="history"><a href="#history" class="headerlink" title="history"></a>history</h4><ul>
+<li>history 10 最近使用的 10 条历史命令</li>
+</ul>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://47.98.162.67:8082">Gogs</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#信息显示"><span class="toc-number">1.</span> <span class="toc-text">信息显示</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#uname"><span class="toc-number">1.1.</span> <span class="toc-text">uname</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hostname"><span class="toc-number">1.2.</span> <span class="toc-text">hostname</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dmesg"><span class="toc-number">1.3.</span> <span class="toc-text">dmesg</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#uptime"><span class="toc-number">1.4.</span> <span class="toc-text">uptime</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#stat"><span class="toc-number">1.5.</span> <span class="toc-text">stat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#du"><span class="toc-number">1.6.</span> <span class="toc-text">du</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#df"><span class="toc-number">1.7.</span> <span class="toc-text">df</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#top"><span class="toc-number">1.8.</span> <span class="toc-text">top</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#free"><span class="toc-number">1.9.</span> <span class="toc-text">free</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#date"><span class="toc-number">1.10.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cal"><span class="toc-number">1.11.</span> <span class="toc-text">cal</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搜索文件"><span class="toc-number">2.</span> <span class="toc-text">搜索文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#which"><span class="toc-number">2.1.</span> <span class="toc-text">which</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#find"><span class="toc-number">2.2.</span> <span class="toc-text">find</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#whereis"><span class="toc-number">2.3.</span> <span class="toc-text">whereis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#locate"><span class="toc-number">2.4.</span> <span class="toc-text">locate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jobs"><span class="toc-number">2.5.</span> <span class="toc-text">jobs</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程管理"><span class="toc-number">3.</span> <span class="toc-text">进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#bg"><span class="toc-number">3.1.</span> <span class="toc-text">bg</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fg"><span class="toc-number">3.2.</span> <span class="toc-text">fg</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kill"><span class="toc-number">3.3.</span> <span class="toc-text">kill</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#killall"><span class="toc-number">3.4.</span> <span class="toc-text">killall</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pkill"><span class="toc-number">3.5.</span> <span class="toc-text">pkill</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#crontab"><span class="toc-number">3.6.</span> <span class="toc-text">crontab</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ps"><span class="toc-number">3.7.</span> <span class="toc-text">ps</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pstree"><span class="toc-number">3.8.</span> <span class="toc-text">pstree</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nohup"><span class="toc-number">3.9.</span> <span class="toc-text">nohup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pgrep"><span class="toc-number">3.10.</span> <span class="toc-text">pgrep</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络操作"><span class="toc-number">4.</span> <span class="toc-text">网络操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#telnet"><span class="toc-number">4.1.</span> <span class="toc-text">telnet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ssh"><span class="toc-number">4.2.</span> <span class="toc-text">ssh</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#scp"><span class="toc-number">4.3.</span> <span class="toc-text">scp</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wget"><span class="toc-number">4.4.</span> <span class="toc-text">wget</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ping"><span class="toc-number">4.5.</span> <span class="toc-text">ping</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#route"><span class="toc-number">4.6.</span> <span class="toc-text">route</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ifconfig"><span class="toc-number">4.7.</span> <span class="toc-text">ifconfig</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ifup"><span class="toc-number">4.8.</span> <span class="toc-text">ifup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ifdown"><span class="toc-number">4.9.</span> <span class="toc-text">ifdown</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#netstat"><span class="toc-number">4.10.</span> <span class="toc-text">netstat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ss"><span class="toc-number">4.11.</span> <span class="toc-text">ss</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#磁盘-amp-文件系统"><span class="toc-number">5.</span> <span class="toc-text">磁盘 &amp; 文件系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mount"><span class="toc-number">5.1.</span> <span class="toc-text">mount</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#umount"><span class="toc-number">5.2.</span> <span class="toc-text">umount</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fsck"><span class="toc-number">5.3.</span> <span class="toc-text">fsck</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dumpe2fs"><span class="toc-number">5.4.</span> <span class="toc-text">dumpe2fs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dump"><span class="toc-number">5.5.</span> <span class="toc-text">dump</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fdisk"><span class="toc-number">5.6.</span> <span class="toc-text">fdisk</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mkfs"><span class="toc-number">5.7.</span> <span class="toc-text">mkfs</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统权限"><span class="toc-number">6.</span> <span class="toc-text">系统权限</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#chmod"><span class="toc-number">6.1.</span> <span class="toc-text">chmod</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#chown"><span class="toc-number">6.2.</span> <span class="toc-text">chown</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#chgrp"><span class="toc-number">6.3.</span> <span class="toc-text">chgrp</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关机重启"><span class="toc-number">7.</span> <span class="toc-text">关机重启</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#shutdown"><span class="toc-number">7.1.</span> <span class="toc-text">shutdown</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#halt"><span class="toc-number">7.2.</span> <span class="toc-text">halt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#poweroff"><span class="toc-number">7.3.</span> <span class="toc-text">poweroff</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#logout"><span class="toc-number">7.4.</span> <span class="toc-text">logout</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#exit"><span class="toc-number">7.5.</span> <span class="toc-text">exit</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">8.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#echo"><span class="toc-number">8.1.</span> <span class="toc-text">echo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#print"><span class="toc-number">8.2.</span> <span class="toc-text">print</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rpm"><span class="toc-number">8.3.</span> <span class="toc-text">rpm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#yum"><span class="toc-number">8.4.</span> <span class="toc-text">yum</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#clear"><span class="toc-number">8.5.</span> <span class="toc-text">clear</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#history"><span class="toc-number">8.6.</span> <span class="toc-text">history</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://www.n-cc.cc/2018/10/27/Linux命令积累/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://www.n-cc.cc/2018/10/27/Linux命令积累/&text=Linux命令积累"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://www.n-cc.cc/2018/10/27/Linux命令积累/&title=Linux命令积累"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.n-cc.cc/2018/10/27/Linux命令积累/&is_video=false&description=Linux命令积累"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Linux命令积累&body=Check out this article: https://www.n-cc.cc/2018/10/27/Linux命令积累/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://www.n-cc.cc/2018/10/27/Linux命令积累/&title=Linux命令积累"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://www.n-cc.cc/2018/10/27/Linux命令积累/&title=Linux命令积累"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://www.n-cc.cc/2018/10/27/Linux命令积累/&title=Linux命令积累"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://www.n-cc.cc/2018/10/27/Linux命令积累/&title=Linux命令积累"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://www.n-cc.cc/2018/10/27/Linux命令积累/&name=Linux命令积累&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 嚣张小飞
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://47.98.162.67:8082">Gogs</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
