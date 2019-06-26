@@ -8,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="require，include 区别require是无条件包含也就是如果一个流程里加入require,无论条件成立与否都会先执行requireinclude有返回值，而require没有(可能因为如此require的速度比include快)包含文件不存在或者语法错误的时候require是致命的错误终止执行,include不是 获取 URL 后缀名 pathinfo() 解析文件路径，返回其组成部分">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php面试整理笔记">
+<meta property="og:title" content="php面试笔记整理1">
 <meta property="og:url" content="https://www.n-cc.cc/2019/06/10/php面试笔记整理1/index.html">
 <meta property="og:site_name" content="我的笔记">
 <meta property="og:description" content="require，include 区别require是无条件包含也就是如果一个流程里加入require,无论条件成立与否都会先执行requireinclude有返回值，而require没有(可能因为如此require的速度比include快)包含文件不存在或者语法错误的时候require是致命的错误终止执行,include不是 获取 URL 后缀名 pathinfo() 解析文件路径，返回其组成部分">
 <meta property="og:locale" content="English">
-<meta property="og:updated_time" content="2019-06-10T03:32:14.340Z">
+<meta property="og:updated_time" content="2019-06-26T15:34:43.677Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php面试整理笔记">
+<meta name="twitter:title" content="php面试笔记整理1">
 <meta name="twitter:description" content="require，include 区别require是无条件包含也就是如果一个流程里加入require,无论条件成立与否都会先执行requireinclude有返回值，而require没有(可能因为如此require的速度比include快)包含文件不存在或者语法错误的时候require是致命的错误终止执行,include不是 获取 URL 后缀名 pathinfo() 解析文件路径，返回其组成部分">
     
     
@@ -36,7 +36,7 @@
         
     
     <!-- title -->
-    <title>php面试整理笔记</title>
+    <title>php面试笔记整理1</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- persian styles -->
@@ -89,15 +89,15 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&text=php面试整理笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试整理笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&is_video=false&description=php面试整理笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=php面试整理笔记&body=Check out this article: https://www.n-cc.cc/2019/06/10/php面试笔记整理1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试整理笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试整理笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试整理笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试整理笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&name=php面试整理笔记&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&text=php面试笔记整理1"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试笔记整理1"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&is_video=false&description=php面试笔记整理1"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=php面试笔记整理1&body=Check out this article: https://www.n-cc.cc/2019/06/10/php面试笔记整理1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试笔记整理1"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试笔记整理1"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试笔记整理1"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试笔记整理1"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&name=php面试笔记整理1&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -114,7 +114,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        php面试整理笔记
+        php面试笔记整理1
     </h1>
 
 
@@ -404,15 +404,15 @@
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&text=php面试整理笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试整理笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&is_video=false&description=php面试整理笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=php面试整理笔记&body=Check out this article: https://www.n-cc.cc/2019/06/10/php面试笔记整理1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试整理笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试整理笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试整理笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试整理笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&name=php面试整理笔记&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&text=php面试笔记整理1"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试笔记整理1"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&is_video=false&description=php面试笔记整理1"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=php面试笔记整理1&body=Check out this article: https://www.n-cc.cc/2019/06/10/php面试笔记整理1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试笔记整理1"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试笔记整理1"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试笔记整理1"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&title=php面试笔记整理1"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://www.n-cc.cc/2019/06/10/php面试笔记整理1/&name=php面试笔记整理1&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
